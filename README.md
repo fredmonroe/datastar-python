@@ -196,30 +196,3 @@ async def sse_endpoint():
 
     return StreamingResponse(message_generator(), media_type="text/event-stream")
 ```
-
-**Testing the SSE Endpoint**:
-
-- **Using `curl`**:
-  ```bash
-  curl -N http://127.0.0.1:8000/sse
-  ```
-
-- **Browser Example**:
-  ```html
-  <!DOCTYPE html>
-  <html>
-  <body>
-    <h1>SSE Messages</h1>
-    <div id="messages"></div>
-    <script>
-      const eventSource = new EventSource("http://127.0.0.1:8000/sse");
-      eventSource.onmessage = (event) => {
-        const msgDiv = document.getElementById("messages");
-        const msg = document.createElement("p");
-        msg.textContent = event.data;
-        msgDiv.appendChild(msg);
-      };
-    </script>
-  </body>
-  </html>
-  ```
