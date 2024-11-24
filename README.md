@@ -1,8 +1,11 @@
 # readme
 
 this is a library i made to work with datastar
+
 i probably won't maintain it
+
 i did this in a hurry so a lot of chatgpt was used, use at your own risk
+
 
 ## Features
 
