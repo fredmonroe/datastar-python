@@ -194,5 +194,10 @@ async def sse_endpoint():
         yield str(remove_event)
         await asyncio.sleep(2)
 
-    return StreamingResponse(message_generator(), media_type="text/event-stream")
+    headers = {
+        "Cache-Control": "no-cache",
+        "Connection": "keep-alive",
+        "Content-Type": "text/event-stream"
+    }
+    return StreamingResponse(message_generator(), media_type="text/event-stream", headers=headers)
 ```
