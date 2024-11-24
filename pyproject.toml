@@ -1,0 +1,9 @@
+[project]
+name = "datastar-python"
+version = "0.1.0"
+description = "python backend library for working with datastar"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.5",
+]
